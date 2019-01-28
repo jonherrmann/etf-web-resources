@@ -280,19 +280,17 @@
                 </xs:documentation>
             </xs:annotation>
             <xs:sequence>
-                <xs:element name="label" type="xs:string"/>
-                <xs:element name="description" type="xs:string"/>
-                <xs:element name="version" type="xs:string"/>
-                <xs:element name="defaultLang" type="xs:language"/>
+                <xs:group ref="RepositoryItemGroup"/>
+                <xs:element ref="Properties" minOccurs="0"/>
                 <xs:element ref="ParameterList"/>
-                <xs:element name="ExecutableTestSuites">
+                <xs:element name="executableTestSuites">
                     <xs:complexType>
-                        <xs:sequence maxOccurs="unbounded">
-                            <xs:element name="executableTestSuite" type="RefType" minOccurs="1"/>
+                        <xs:sequence minOccurs="1" maxOccurs="unbounded">
+                            <xs:element name="executableTestSuite" type="RefType"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="TestObjects" minOccurs="0">
+                <xs:element name="testObjects" minOccurs="0">
                     <xs:complexType>
                         <xs:sequence maxOccurs="unbounded">
                             <xs:element name="testObject" type="RefType" minOccurs="1"/>
@@ -300,7 +298,7 @@
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>
-            <xs:attributeGroup ref="GroupAndArtifactIdentifierAttributeGroup"/>
+            <xs:attributeGroup ref="IdentifierAttributeGroup"/>
         </xs:complexType>
     </xs:element>
 

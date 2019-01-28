@@ -20,6 +20,7 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:group ref="RepositoryItemGroup"/>
+                <xs:element ref="Properties" minOccurs="0"/>
                 <xs:element name="testDriver" type="RefType" minOccurs="0"/>
                 <xs:element name="translationTemplateBundle" type="RefType" minOccurs="0"/>
                 <xs:element ref="ParameterList" minOccurs="0"/>
@@ -107,6 +108,7 @@
         <xs:complexType>
             <xs:sequence minOccurs="1" maxOccurs="unbounded">
                 <xs:group ref="MetaDataItemGroup"/>
+                <xs:element ref="Properties" minOccurs="0"/>
                 <xs:element name="testCases">
                     <xs:complexType>
                         <xs:sequence minOccurs="1" maxOccurs="unbounded">
@@ -115,7 +117,7 @@
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>
-            <xs:attributeGroup ref="GroupAndArtifactIdentifierAttributeGroup"/>
+            <xs:attributeGroup ref="IdentifierAttributeGroup"/>
         </xs:complexType>
     </xs:element>
 
@@ -124,6 +126,7 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:group ref="MetaDataItemGroup"/>
+                <xs:element ref="Properties" minOccurs="0"/>
                 <xs:element name="dependencies" minOccurs="0">
                     <xs:complexType>
                         <xs:sequence minOccurs="1" maxOccurs="unbounded">
@@ -139,7 +142,7 @@
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>
-            <xs:attributeGroup ref="GroupAndArtifactIdentifierAttributeGroup"/>
+            <xs:attributeGroup ref="IdentifierAttributeGroup"/>
             <xs:attribute name="deselectable" type="xs:boolean" default="true">
                 <xs:annotation>
                     <xs:documentation> If set to "true" the Test Case can be deselected by the user
@@ -164,7 +167,7 @@
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>
-            <xs:attributeGroup ref="GroupAndArtifactIdentifierAttributeGroup"/>
+            <xs:attributeGroup ref="IdentifierAttributeGroup"/>
         </xs:complexType>
     </xs:element>
 
@@ -179,7 +182,7 @@
             <xs:sequence>
                 <xs:group ref="MetaDataItemGroup"/>
             </xs:sequence>
-            <xs:attributeGroup ref="GroupAndArtifactIdentifierAttributeGroup"/>
+            <xs:attributeGroup ref="IdentifierAttributeGroup"/>
         </xs:complexType>
     </xs:element>
 
@@ -188,6 +191,7 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:group ref="MetaDataItemGroup"/>
+                <xs:element ref="Properties" minOccurs="0"/>
                 <xs:element name="statementForExecution" type="stringWithTokens">
                     <xs:annotation>
                         <xs:documentation>Tokens are resolved with argumentsDto from test case or
@@ -210,7 +214,7 @@
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>
-            <xs:attributeGroup ref="GroupAndArtifactIdentifierAttributeGroup"/>
+            <xs:attributeGroup ref="IdentifierAttributeGroup"/>
         </xs:complexType>
     </xs:element>
 
@@ -219,6 +223,7 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:group ref="MetaDataItemGroup"/>
+                <xs:element ref="Properties" minOccurs="0"/>
                 <xs:element name="expectedResult" type="stringWithTokens">
                     <xs:annotation>
                         <xs:documentation>Tokens are resolved with argumentsDto from test case or
@@ -249,7 +254,7 @@
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>
-            <xs:attributeGroup ref="GroupAndArtifactIdentifierAttributeGroup"/>
+            <xs:attributeGroup ref="IdentifierAttributeGroup"/>
         </xs:complexType>
     </xs:element>
 
@@ -289,7 +294,7 @@
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>
-            <xs:attributeGroup ref="GroupAndArtifactIdentifierAttributeGroup"/>
+            <xs:attributeGroup ref="IdentifierAttributeGroup"/>
         </xs:complexType>
     </xs:element>
 
