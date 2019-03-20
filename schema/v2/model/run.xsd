@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns="http://www.interactive-instruments.de/etf/2.0"
-    targetNamespace="http://www.interactive-instruments.de/etf/2.0" elementFormDefault="qualified"
-    version="1.0">
+           xmlns="http://www.interactive-instruments.de/etf/2.0"
+           targetNamespace="http://www.interactive-instruments.de/etf/2.0"
+           elementFormDefault="qualified"
+           version="1.0">
 
     <xs:annotation>
-        <xs:documentation xml:lang="en"> run.xsd. Jon Herrmann, (c) 2016-2018 interactive
-            instruments GmbH. This file is part of ETF which is licensed under EUPL 1.2
-        </xs:documentation>
+        <xs:documentation xml:lang="en"> run.xsd. Created by Jon Herrmann, (c) 2016-2017 interactive
+            instruments GmbH. This file is part of ETF which is licensed under the Apache License
+            Version 2.0 </xs:documentation>
     </xs:annotation>
 
     <!-- =============================================================== -->
@@ -18,12 +19,11 @@
     <xs:include schemaLocation="test.xsd"/>
     <!-- =============================================================== -->
 
-
     <!-- =============================================================== -->
     <xs:element name="TestRun">
         <xs:complexType>
             <xs:annotation>
-                <xs:documentation> The object which composes the objects from each model branch
+                <xs:documentation> The root object which composes the objects from each model branch
                 </xs:documentation>
             </xs:annotation>
             <xs:sequence>
@@ -39,22 +39,26 @@
                             </xs:sequence>
                         </xs:sequence>
                     </xs:complexType>
-                </xs:element>
+                </xs:element>      
                 <xs:element name="logPath" type="xs:anyURI">
                     <xs:annotation>
-                        <xs:documentation> A path to the log file on the ETF instance </xs:documentation>
-                        <xs:documentation source="v3ModelChange"> May be changed in v3: <xs:choice>
+                        <xs:documentation>
+                            A path to the log file on the ETF instance
+                        </xs:documentation>
+                        <xs:documentation source="v3ModelChange">
+                            May be changed in v3:
+                            <xs:choice>
                                 <xs:annotation>
-                                    <xs:documentation>At least one local or one remote log
-                                        file</xs:documentation>
+                                    <xs:documentation>At least one local or one remote log file</xs:documentation>
                                 </xs:annotation>
                                 <xs:sequence>
                                     <xs:element ref="LocalLog"/>
                                     <xs:element ref="RemoteLog" minOccurs="0"/>
                                 </xs:sequence>
                                 <xs:element ref="RemoteLog" minOccurs="1"/>
-                            </xs:choice> where LocalLog and RemoteLog are: <xs:element
-                                name="LocalLog">
+                            </xs:choice>
+                            where LocalLog and RemoteLog are:
+                            <xs:element name="LocalLog">
                                 <xs:complexType>
                                     <xs:attribute name="href" type="ExternalUriType"/>
                                 </xs:complexType>
